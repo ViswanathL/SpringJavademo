@@ -18,12 +18,22 @@
 		<param-value>
 			/WEB-INF/spring-config.xml
 			/WEB-INF/spring-config-security.xml
-			/WEB-INF/Beans.xml
 		</param-value>
 	</context-param>
 
+	<!-- Spring Servlet -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
 	<!-- Listeners -->
-	
+
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
